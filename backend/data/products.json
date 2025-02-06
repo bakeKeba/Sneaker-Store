@@ -1,0 +1,203 @@
+{
+    "shoes": [
+    {
+        "id": 1,
+        "name": "Timberland 6 Inch Biggie",
+        "type": "Boot",
+        "price": 229.99,
+        "sale": false,
+        "new": true,
+        "images": [
+          "assets/images/1_1.jpg",
+          "assets/images/1_2.jpg",
+          "assets/images/1_3.jpg"
+        ]
+      },  
+      {
+        "id": 2,
+        "name": "Timberland 6 Inch",
+        "type": "Boot",
+        "price": 219.99,
+        "sale": false,
+        "new": true,
+        "images": [
+          "assets/images/2_1.jpg",
+          "assets/images/2_2.jpg",
+          "assets/images/2_3.jpg"
+        ]
+      },
+      {
+        "id": 3,
+        "name": "Nike Shox Total",
+        "type": "Running",
+        "price": 169.99,
+        "sale": false,
+        "new": false,
+        "images": [
+          "assets/images/3_1.jpg",
+          "assets/images/3_2.jpg",
+          "assets/images/3_3.jpg"
+        ]
+      },
+      {
+        "id": 4,
+        "name": "New Balance 370",
+        "type": "Running",
+        "price": 119.99,
+        "sale": true,
+        "salePrice": 95.00,
+        "new": false,
+        "images": [
+          "assets/images/4_1.jpg",
+          "assets/images/4_2.jpg",
+          "assets/images/4_3.jpg"
+        ]
+      },
+      {
+        "id": 5,
+        "name": "Hoka Speedgoat 5",
+        "type": "Running",
+        "price": 159.99,
+        "sale": false,
+        "new": false,
+        "images": [
+          "assets/images/5_1.jpg",
+          "assets/images/5_2.jpg",
+          "assets/images/5_3.jpg"
+        ]
+      },
+      {
+        "id": 6,
+        "name": "Salomon XT- PATHWAY 2",
+        "type": "Running",
+        "price": 129.99,
+        "sale": true,
+        "salePrice": 100.00,
+        "new": false,
+        "images": [
+          "assets/images/6_1.jpg",
+          "assets/images/6_2.jpg",
+          "assets/images/6_3.jpg"
+        ]
+      },
+      {
+        "id": 7,
+        "name": "adidas Anthony Edwards 1 Low",
+        "type": "Basketball",
+        "price": 109.99,
+        "sale": false,
+        "new": true,
+        "images": [
+          "assets/images/7_1.jpg",
+          "assets/images/7_2.jpg",
+          "assets/images/7_3.jpg"
+        ]
+      },
+      {
+        "id": 8,
+        "name": "Puma All-pro Nitro Paris Game",
+        "type": "Basketball",
+        "price": 129.99,
+        "sale": false,
+        "new": true,
+        "images": [
+          "assets/images/8_1.jpg",
+          "assets/images/8_2.jpg",
+          "assets/images/8_3.jpg"
+        ]
+      },
+      {
+        "id": 9,
+        "name": "Nike Giannis Immortality 4",
+        "type": "Basketball",
+        "price": 89.99,
+        "sale": false,
+        "new": false,
+        "images": [
+          "assets/images/9_1.jpg",
+          "assets/images/9_2.jpg",
+          "assets/images/9_3.jpg"
+        ]
+      },
+      {
+        "id": 10,
+        "name": "Puma MB.03 X Dexter's Lab",
+        "type": "Basketball",
+        "price": 149.99,
+        "sale": false,
+        "new": false,
+        "images": [
+          "assets/images/10_1.jpg",
+          "assets/images/10_2.jpg",
+          "assets/images/10_3.jpg"
+        ]
+      },
+      {
+        "id": 11,
+        "name": "Nike Air Max Tuned 1",
+        "type": "Lifestyle",
+        "price": 189.99,
+        "sale": false,
+        "new": true,
+        "images": [
+          "assets/images/11_1.jpg",
+          "assets/images/11_2.jpg",
+          "assets/images/11_3.jpg"
+        ]
+      },
+      {
+        "id": 12,
+        "name": "Puma Speedcat",
+        "type": "Lifestyle",
+        "price": 109.99,
+        "sale": false,
+        "new": true,
+        "images": [
+          "assets/images/12_1.jpg",
+          "assets/images/12_2.jpg",
+          "assets/images/12_3.jpg"
+        ]
+      },
+      {
+        "id": 13,
+        "name": "Nike Air Force 1 Low",
+        "type": "Lifestyle",
+        "price": 119.99,
+        "sale": false,
+        "new": false,
+        "images": [
+          "assets/images/13_1.jpg",
+          "assets/images/13_2.jpg",
+          "assets/images/13_3.jpg"
+        ]
+      },
+      {
+        "id": 14,
+        "name": "adidas Adi Top Ten Rb",
+        "type": "Lifestyle",
+        "price": 109.99,
+        "sale": true,
+        "salePrice": 29.99,
+        "new": false,
+        "images": [
+          "assets/images/14_1.jpg",
+          "assets/images/14_2.jpg",
+          "assets/images/14_3.jpg"
+        ]
+      },
+      {
+        "id": 15,
+        "name": "Lacoste Lineshot",
+        "type": "Lifestyle",
+        "price": 124.99,
+        "sale": true,
+        "salePrice": 34.99,
+        "new": false,
+        "images": [
+          "assets/images/15_1.jpg",
+          "assets/images/15_2.jpg",
+          "assets/images/15_3.jpg"
+        ]
+      }
+    ]   
+}
