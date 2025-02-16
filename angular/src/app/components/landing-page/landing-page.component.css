@@ -5,6 +5,10 @@
   box-sizing: border-box;
 }
 
+.shoes-width {
+  width: 100%;
+}
+
 .landing-container {
   display: flex;
   flex-direction: column;
@@ -12,7 +16,6 @@
   justify-content: center;
   padding: 25px 65px;
   width: 100%;
-  background-color: #f8f8f8;
 }
 
 /* Logo Container */
@@ -53,51 +56,35 @@
 .shoes-title {
   display: flex;
   flex-direction: column;
-  align-items: left;
   gap: 10px;
   width: 100%;
 }
 
 .shoes-title hr {
-  flex-grow: 1;
   height: 3px;
   background: black;
   opacity: 50%;
 }
 
+.shoes-title-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
 .shoes-main-title {
-  font-size: 22px;
+  font-size: 40px;
   font-weight: bold;
 }
 
 .shoes-count {
-  font-size: 18px;
+  font-size: 24px;
   color: gray;
 }
 
 /* Shopping Cart Icon */
 .cart-icon {
-  font-size: 24px;
+  font-size: 36px;
   cursor: pointer;
-}
-
-/* Shoe Grid (4 shoes per row) */
-.shoe-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 15px;
-  width: 100%;
-  max-width: 900px;
-  /* Prevents the grid from getting too wide */
-}
-
-.shoe-grid img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  transition: transform 0.2s ease-in-out;
-}
-
-.shoe-grid img:hover {
-  transform: scale(1.05);
 }
