@@ -1,18 +1,20 @@
 const express = require("express");
 const fs = require("fs");
+const cors = require("cors");
 const path = require("path");
 const app = express();
 const PORT = 3000;
 
+app.use(cors());
 app.use(express.json());
-app.use(express.urlencoded({extended: true}));
+app.use(express.urlencoded({ extended: true }));
 
 const products = JSON.parse(fs.readFileSync(path.join(__dirname, "data", "products.json"), "utf8"));
 let cart = JSON.parse(fs.readFileSync(path.join(__dirname, "data", "cart.json"), "utf8"));
 
 // Get all products
 app.get("/api/products", (req, res) => {
-    res.json(products);
+  res.json(products);
 });
 
 // Get cart items
@@ -29,7 +31,7 @@ app.post("/api/cart", (req, res) => {
     fs.writeFileSync(path.join(__dirname, "data", "cart.json"), JSON.stringify(cart, null, 2));
     res.status(201).json(cart);
   } else {
-    res.status(404).json({ message: "Product not found"});
+    res.status(404).json({ message: "Product not found" });
   }
 });
 
@@ -43,9 +45,9 @@ app.delete("/api/cart/:productId", (req, res) => {
 
 // Clear cart
 app.delete("/api/cart", (req, res) => {
-    cart = [];
-    fs.writeFileSync(path.join(__dirname, "data", "cart.json"), JSON.stringify(cart, null, 2));
-    res.status(200).json(cart);
+  cart = [];
+  fs.writeFileSync(path.join(__dirname, "data", "cart.json"), JSON.stringify(cart, null, 2));
+  res.status(200).json(cart);
 });
 
 app.listen(PORT, () => {
