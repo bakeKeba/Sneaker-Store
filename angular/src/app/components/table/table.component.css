@@ -14,7 +14,7 @@
 
 .shoe-item:hover {
     transform: scale(1.05);
-    border: 1px solid black;
+    cursor: pointer;
 }
 
 .shoe-image {

@@ -32,8 +32,8 @@ export class LandingPageComponent implements OnInit {
   loadProducts() {
     this.productService.getProducts().subscribe(
       (response: any) => {
-        if (response.shoes && Array.isArray(response.shoes)) {
-          this.products = response.shoes;
+        if (response) {
+          this.products = response;
           //this.filteredProducts = response.shoes;
         } else {
           console.error("Invalid API response format:", response);

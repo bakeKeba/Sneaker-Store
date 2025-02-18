@@ -1,0 +1,10 @@
+.selection-container {
+    text-align: center;
+    padding: 20px;
+}
+
+.shoe-image {
+    width: 300px;
+    height: auto;
+    border-radius: 10px;
+}
