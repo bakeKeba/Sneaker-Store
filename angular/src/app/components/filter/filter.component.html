@@ -1,6 +1,6 @@
 <div class="filter-container">
     <div class="filter-options">
-        <span *ngFor="let category of categories; let i = index" (click)="selectCategory(category, i)"
+        <span *ngFor="let category of categories; let i = index" (click)="onCategoryChange(category, i)"
             [class.selected]="selectedCategory === category">
             {{ category }}
             <hr>
@@ -9,9 +9,9 @@
 
     <div class="sort-container">
         <label for="sort">Sort by:</label>
-        <select id="sort" [(ngModel)]="selectedSortOption" (change)="sortProducts()">
+        <select id="sort" [(ngModel)]="selectedSortOption" (change)="onSortChange()">
             <option *ngFor="let option of sortOptions" [value]="option.value">{{ option.label }}</option>
         </select>
     </div>
 </div>
-<hr class="filter-line">    
+<hr class="filter-line">

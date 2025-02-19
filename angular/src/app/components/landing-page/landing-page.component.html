@@ -18,8 +18,8 @@
     </div>
   </div>
 
-  <app-filter class="shoes-width"></app-filter>
+  <app-filter (filterChanged)="onFilterChanged($event)" class="shoes-width"></app-filter>
 
-  <app-table [shoes]="products"></app-table>
+  <app-table [shoes]="filteredProducts"></app-table>
 
 </div>

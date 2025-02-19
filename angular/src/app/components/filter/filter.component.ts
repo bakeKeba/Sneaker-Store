@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { NgFor } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
@@ -10,7 +10,10 @@ import { FormsModule } from '@angular/forms';
     styleUrls: ['./filter.component.css']
 })
 export class FilterComponent {
-    categories: string[] = ['All', 'Basketball', 'Boots', 'Football', 'Running'];
+
+    @Output() filterChanged = new EventEmitter<any>();
+
+    categories: string[] = ['All', 'Basketball', 'Boots', 'Lifestyle', 'Running'];
     selectedCategory: string = 'All';
     highlightWidth: number = 50;
     highlightLeft: number = 0;
@@ -23,19 +26,25 @@ export class FilterComponent {
     ];
     selectedSortOption: string = 'featured';
 
-    selectCategory(category: string, index: number) {
+    onCategoryChange(category: string, index: number) {
         this.selectedCategory = category;
-        // TODO: Filter products based on category   
         const spans = document.querySelectorAll('.filter-options span');
         if (spans.length > 0) {
             const selectedSpan = spans[index] as HTMLElement;
             this.highlightWidth = selectedSpan.offsetWidth;
             this.highlightLeft = selectedSpan.offsetLeft;
         }
+        this.emitFilterData();
     }
 
-    sortProducts() {
-        // TODO: Implement sorting logic
-        console.log('Sorting by:', this.selectedSortOption);
+    onSortChange() {
+        this.emitFilterData();
+    }
+
+    private emitFilterData() {
+        this.filterChanged.emit({
+            category: this.selectedCategory,
+            sortOption: this.selectedSortOption
+        });
     }
 }

@@ -1,6 +1,9 @@
 <div class="table-container">
     <div class="shoe-item" *ngFor="let shoe of shoes" (click)="goToSelection(shoe)">
-        <img [src]="shoe.images[0]" [alt]="shoe.name" class="shoe-image">
+        <div class="shoe-image-container">
+            <img [src]="shoe.images[0]" [alt]="shoe.name" class="shoe-image">
+            <div class="new-label" *ngIf="shoe.new">NEW</div>
+        </div>
         <div class="shoe-name">{{ shoe.name }}</div>
         <div class="shoe-type">{{ shoe.type }}</div>
         <div class="shoe-price">€ {{ shoe.price }}</div>

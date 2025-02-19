@@ -13,15 +13,7 @@ import { ProductService } from '../../services/product.service';
 export class LandingPageComponent implements OnInit {
 
   products: any[] = [];
-  categories: string[] = ['All', 'Basketball', 'Boots', 'Football', 'Running'];
-  selectedCategory: string = 'All';
-
-  sortOptions = [
-    { value: 'price-asc', label: 'Price: Low to High' },
-    { value: 'price-desc', label: 'Price: High to Low' },
-    { value: 'newest', label: 'Newest First' }
-  ];
-  selectedSortOption: string = '';
+  filteredProducts: any[] = [];
 
   constructor(private productService: ProductService) { }
 
@@ -34,7 +26,7 @@ export class LandingPageComponent implements OnInit {
       (response: any) => {
         if (response) {
           this.products = response;
-          //this.filteredProducts = response.shoes;
+          this.filteredProducts = response;
         } else {
           console.error("Invalid API response format:", response);
         }
@@ -45,14 +37,30 @@ export class LandingPageComponent implements OnInit {
     );
   }
 
+  onFilterChanged(filterData: { category: string, sortOption: string }) {
+    if (filterData.category === 'All') {
+      this.filteredProducts = this.products;
+    } else {
+      this.filteredProducts = this.products.filter(product => product.type === filterData.category);
+    }
 
-  selectCategory(category: string) {
-    this.selectedCategory = category;
-    // TODO: Filter products based on category
+    // Sorting logic based on selected sort option
+    if (filterData.sortOption) {
+      this.filteredProducts = this.filteredProducts.sort((a, b) => {
+        switch (filterData.sortOption) {
+          case 'featured':
+            return a.id - b.id;
+          case 'price-asc':
+            return a.price - b.price;
+          case 'price-desc':
+            return b.price - a.price;
+          case 'newest':
+            return (a.new === b.new) ? 0 : a.new ? -1 : 1;
+          default:
+            return 0;
+        }
+      });
+    }
   }
 
-  sortProducts() {
-    // TODO: Implement sorting logic
-    console.log('Sorting by:', this.selectedSortOption);
-  }
 }

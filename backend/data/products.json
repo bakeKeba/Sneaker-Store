@@ -2,7 +2,7 @@
   {
     "id": 1,
     "name": "Timberland 6 Inch Biggie",
-    "type": "Boot",
+    "type": "Boots",
     "price": 229.99,
     "sale": false,
     "new": true,
@@ -15,7 +15,7 @@
   {
     "id": 2,
     "name": "Timberland 6 Inch",
-    "type": "Boot",
+    "type": "Boots",
     "price": 219.99,
     "sale": false,
     "new": true,
