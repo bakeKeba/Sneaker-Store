@@ -1,0 +1,28 @@
+<head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<div class="logo-container">
+    <img class="logo" src="assets/images/background.jpg" alt="Logo">
+    <div class="logo-text">COOL STYLE, COOLER FEET</div>
+</div>
+
+<div class="shoes-header">
+    <div class="shoes-title">
+        <hr>
+        <div class="shoes-title-content">
+            <span *ngIf="page == 'landing'" class="shoes-main-title">All Sneakers for Men <span
+                    class="shoes-count">(20)</span></span>
+            <ng-container *ngIf="page == 'selection'">
+                <i class="material-icons arrow-icon" (click)="goBack()">arrow_back</i>
+                <span class="selection-main-text"><span class="back-text">Back</span> Home \ Men \ Sneakers</span>
+            </ng-container>
+            <div class="cart-container">
+                <i class="material-icons cart-icon" [ngClass]="{ 'cart-fill': cart.length }">shopping_cart</i>
+                <span *ngIf="cart.length && cart.length < 10" class="cart-count">{{ cart.length }}</span>
+                <span *ngIf="cart.length && cart.length > 10" class="cart-count">10+</span>
+            </div>
+        </div>
+        <hr>
+    </div>
+</div>

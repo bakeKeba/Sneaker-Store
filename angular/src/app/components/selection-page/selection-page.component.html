@@ -1,4 +1,7 @@
 <div *ngIf="shoe" class="selection-container">
+
+    <app-header [page]="'selection'"></app-header>
+
     <img [src]="shoe.images[0]" [alt]="shoe.name" class="shoe-image">
     <h2>{{ shoe.name }}</h2>
     <p>Type: {{ shoe.type }}</p>

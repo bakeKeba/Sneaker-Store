@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Logo Container */
+.logo-container {
+    position: relative;
+    width: 100%;
+    padding: 0 155px;
+    margin-bottom: 40px;
+}
+
+.logo {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.logo-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 45px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    width: 100%;
+}
+
+.shoes-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.shoes-title {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+.shoes-title hr {
+    height: 3px;
+    background: black;
+    opacity: 50%;
+}
+
+.shoes-title-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+}
+
+.shoes-main-title {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.shoes-count {
+    font-size: 24px;
+    color: gray;
+}
+
+.arrow-icon {
+    font-size: 36px;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.selection-main-text {
+    font-size: 24px;
+    letter-spacing: 0.15em;
+}
+
+.back-text {
+    font-size: 36px;
+    font-weight: bold;
+    text-decoration: underline;
+    margin-right: 20px;
+}
+
+.cart-container {
+    position: relative;
+    display: inline-block;
+    margin-left: auto;
+}
+
+.cart-icon {
+    font-size: 36px;
+    cursor: pointer;
+    position: relative;
+}
+
+.cart-fill {
+    margin-top: 5px;
+}
+
+.cart-count {
+    position: absolute;
+    left: 50%;
+    top: -10px;
+    transform: translateX(-50%);
+    font-size: 16px;
+    font-weight: bold;
+}

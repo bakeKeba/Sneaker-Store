@@ -2,10 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';  // Import ActivatedRoute
 import { ProductService } from '../../services/product.service';
 import { NgIf } from '@angular/common';
+import { HeaderComponent } from '../header/header.component';
 
 @Component({
     selector: 'app-selection-page',
-    imports: [NgIf],
+    imports: [NgIf, HeaderComponent],
     standalone: true,
     templateUrl: './selection-page.component.html',
     styleUrls: ['./selection-page.component.css']

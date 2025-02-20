@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { FilterComponent } from '../filter/filter.component';
 import { TableComponent } from '../table/table.component';
 import { ProductService } from '../../services/product.service';
+import { HeaderComponent } from '../header/header.component';
 
 @Component({
   selector: 'app-landing-page',
   standalone: true,
-  imports: [FilterComponent, TableComponent],
+  imports: [FilterComponent, TableComponent, HeaderComponent],
   templateUrl: './landing-page.component.html',
   styleUrl: './landing-page.component.css'
 })
