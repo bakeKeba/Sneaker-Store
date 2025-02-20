@@ -74,8 +74,10 @@
 .shoe-price {
     font-size: 24px;
     font-weight: bold;
+    color: black;
 }
 
 .shoe-price.strikethrough {
     text-decoration: line-through;
+    font-weight: normal
 }

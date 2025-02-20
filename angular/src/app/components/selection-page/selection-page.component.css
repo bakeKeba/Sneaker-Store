@@ -13,8 +13,175 @@
     width: 100%;
 }
 
-.shoe-image {
-    width: 300px;
-    height: auto;
-    border-radius: 10px;
+.main-container {
+    background-color: #EBEBEB;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.big-shoe-image {
+    width: 80%;
+    margin: auto;
+}
+
+.shoe-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 2;
+}
+
+.primary-shoe-container {
+    display: flex;
+    align-items: center;
+    align-content: center;
+}
+
+.secondary-image-container {
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    align-content: center;
+}
+
+.thumbnail-container {
+    display: flex;
+    margin-bottom: 25px;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.thumbnail {
+    width: 50%;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.thumbnail:hover {
+    transform: scale(1.1);
+}
+
+hr {
+    width: 80%;
+    height: 2px;
+    background-color: transparent;
+    border: none;
+    margin-top: 5px;
+}
+
+hr.active {
+    background-color: black;
+}
+
+.shoe-info {
+    background-color: white;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin: 25px;
+    margin-left: 0;
+    padding: 15px;
+}
+
+.label {
+    display: inline-block;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    padding: 5px;
+    border-radius: 1px;
+    font-size: 24px;
+    text-align: center;
+    width: fit-content;
+    margin-bottom: 20px;
+}
+
+
+.sale {
+    background-color: #FF0000;
+}
+
+.shoe-name {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.shoe-type {
+    font-size: 24px;
+    margin: 5px 0;
+}
+
+.price-container {
+    margin-bottom: 25px;
+    display: flex;
+    width: 100%;
+}
+
+.shoe-sale-price {
+    color: red;
+    font-weight: bold;
+    font-size: 30px;
+    margin-right: 20px;
+}
+
+.shoe-price {
+    font-size: 30px;
+    color: black;
+    font-weight: bold;
+}
+
+.shoe-price.strikethrough {
+    text-decoration: line-through;
+    font-weight: normal
+}
+
+.size-text {
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 25px;
+}
+
+.size-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.size-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+    background-color: #EBEBEB;
+    aspect-ratio: 1 / 1;
+    width: 100%;
+}
+
+.size-box:hover {
+    border: 1px solid black;
+}
+
+.size-box.selected {
+    background-color: black;
+    color: white;
+}
+
+.add-to-cart:disabled {
+    background-color: gray;
+    cursor: not-allowed;
+}
+
+.add-to-cart {
+    background-color: black;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 10px;
+    margin-top: 20px;
+    cursor: pointer;
 }

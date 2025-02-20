@@ -2,9 +2,41 @@
 
     <app-header [page]="'selection'"></app-header>
 
-    <img [src]="shoe.images[0]" [alt]="shoe.name" class="shoe-image">
-    <h2>{{ shoe.name }}</h2>
-    <p>Type: {{ shoe.type }}</p>
-    <p>Price: €{{ shoe.price }}</p>
-    <button>Back</button>
+    <div class="main-container">
+        <div class="shoe-container">
+            <div class="primary-shoe-container">
+                <img [src]="selectedImage" [alt]="shoe.name" class="big-shoe-image">
+            </div>
+            <div class="thumbnail-container">
+                <div *ngFor="let image of shoe.images" class="secondary-image-container">
+                    <img [src]="image" [alt]="shoe.name" class="thumbnail" [class.selected]="image === selectedImage"
+                        (click)="changeImage(image)">
+                    <hr [class.active]="image === selectedImage">
+                </div>
+            </div>
+        </div>
+
+        <div class="shoe-info">
+            <div class="label" *ngIf="shoe.new">NEW</div>
+            <div class="sale label" *ngIf="shoe.sale">SALE</div>
+            <div class="shoe-name">{{ shoe.name }}</div>
+            <div class="shoe-type">{{ shoe.type }}</div>
+            <div class="price-container">
+                <div *ngIf="shoe.sale" class="shoe-sale-price">€ {{ shoe.salePrice }}</div>
+                <div class="shoe-price" [class.strikethrough]="shoe.sale">€ {{ shoe.price }}</div>
+            </div>
+            <div class="size-text">Choose your size</div>
+
+            <div class="size-grid">
+                <div *ngFor="let size of sizes" class="size-box" [class.selected]="size === selectedSize"
+                    (click)="selectSize(size)">
+                    {{ size }}
+                </div>
+            </div>
+
+            <button class="add-to-cart" [disabled]="!selectedSize" (click)="addToCart(shoe.id)">Add to Cart +</button>
+        </div>
+    </div>
+
+
 </div>

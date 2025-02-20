@@ -15,7 +15,8 @@
                     class="shoes-count">(20)</span></span>
             <ng-container *ngIf="page == 'selection'">
                 <i class="material-icons arrow-icon" (click)="goBack()">arrow_back</i>
-                <span class="selection-main-text"><span class="back-text">Back</span> Home \ Men \ Sneakers</span>
+                <span class="selection-main-text"><span (click)="goBack()" class="back-text">Back</span> Home \ Men \
+                    Sneakers</span>
             </ng-container>
             <div class="cart-container">
                 <i class="material-icons cart-icon" [ngClass]="{ 'cart-fill': cart.length }">shopping_cart</i>
