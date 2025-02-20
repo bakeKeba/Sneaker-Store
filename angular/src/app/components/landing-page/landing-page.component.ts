@@ -44,16 +44,17 @@ export class LandingPageComponent implements OnInit {
       this.filteredProducts = this.products.filter(product => product.type === filterData.category);
     }
 
-    // Sorting logic based on selected sort option
     if (filterData.sortOption) {
       this.filteredProducts = this.filteredProducts.sort((a, b) => {
+        const priceA = a.sale ? a.salePrice : a.price;
+        const priceB = b.sale ? b.salePrice : b.price;
         switch (filterData.sortOption) {
           case 'featured':
             return a.id - b.id;
           case 'price-asc':
-            return a.price - b.price;
+            return priceA - priceB;
           case 'price-desc':
-            return b.price - a.price;
+            return priceB - priceA;
           case 'newest':
             return (a.new === b.new) ? 0 : a.new ? -1 : 1;
           default:

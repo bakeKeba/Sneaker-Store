@@ -28,16 +28,19 @@
     display: inline-block;
 }
 
-.new-label {
+.label {
     position: absolute;
-    top: 10px;
-    left: 10px;
+    top: 5px;
+    left: 5px;
     background-color: black;
     color: white;
     font-size: 14px;
-    font-weight: bold;
-    padding: 5px 10px;
-    border-radius: 3px;
+    padding: 5px;
+    border-radius: 1px;
+}
+
+.sale {
+    background-color: #FF0000;
 }
 
 
@@ -54,9 +57,25 @@
     margin-left: 10px;
 }
 
+.price-container {
+    margin-bottom: 10px;
+    margin-left: 10px;
+    display: flex;
+    width: 100%;
+}
+
+.shoe-sale-price {
+    color: red;
+    font-weight: bold;
+    font-size: 24px;
+    margin-right: 20px;
+}
+
 .shoe-price {
     font-size: 24px;
     font-weight: bold;
-    margin-bottom: 10px;
-    margin-left: 10px;
+}
+
+.shoe-price.strikethrough {
+    text-decoration: line-through;
 }

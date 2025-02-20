@@ -2,10 +2,15 @@
     <div class="shoe-item" *ngFor="let shoe of shoes" (click)="goToSelection(shoe)">
         <div class="shoe-image-container">
             <img [src]="shoe.images[0]" [alt]="shoe.name" class="shoe-image">
-            <div class="new-label" *ngIf="shoe.new">NEW</div>
+            <div class="label" *ngIf="shoe.new">NEW</div>
+            <div class="sale label" *ngIf="shoe.sale">SALE</div>
         </div>
         <div class="shoe-name">{{ shoe.name }}</div>
         <div class="shoe-type">{{ shoe.type }}</div>
-        <div class="shoe-price">€ {{ shoe.price }}</div>
+
+        <div class="price-container">
+            <div *ngIf="shoe.sale" class="shoe-sale-price">€ {{ shoe.salePrice }}</div>
+            <div class="shoe-price" [class.strikethrough]="shoe.sale">€ {{ shoe.price }}</div>
+        </div>
     </div>
 </div>
