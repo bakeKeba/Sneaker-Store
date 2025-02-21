@@ -2,6 +2,7 @@ import { NgClass, NgIf } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { CartService } from '../../services/cart.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -13,9 +14,11 @@ import { CartService } from '../../services/cart.service';
 })
 export class HeaderComponent implements OnInit {
     @Input() page: string = '';
+    @Input() totalPrice: number = 0;
     cart: any[] = [];
 
     constructor(private location: Location,
+        private router: Router,
         private cartService: CartService) {
     }
 
@@ -31,5 +34,9 @@ export class HeaderComponent implements OnInit {
 
     goBack(): void {
         this.location.back();
+    }
+
+    goToCart() {
+        this.router.navigate([`/cart`]);
     }
 }

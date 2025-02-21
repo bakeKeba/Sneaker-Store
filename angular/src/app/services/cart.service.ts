@@ -14,8 +14,8 @@ export class CartService {
         return this.http.get<any[]>(this.apiUrl);
     }
 
-    addToCart(productId: number): Observable<any> {
-        return this.http.post<any>(this.apiUrl, { productId });
+    addToCart(shoe: any): Observable<any> {
+        return this.http.post<any>(this.apiUrl, { shoe });
     }
 
     removeFromCart(productId: number): Observable<any> {

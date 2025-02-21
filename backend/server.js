@@ -37,10 +37,9 @@ app.get("/api/cart", (req, res) => {
 
 // Add item to cart
 app.post("/api/cart", (req, res) => {
-  const productId = req.body.productId;
-  const product = products.find(p => p.id === productId);
-  if (product) {
-    cart.push(product);
+  const shoe = req.body.shoe;
+  if (shoe) {
+    cart.push(shoe);
     fs.writeFileSync(path.join(__dirname, "data", "cart.json"), JSON.stringify(cart, null, 2));
     res.status(201).json(cart);
   } else {

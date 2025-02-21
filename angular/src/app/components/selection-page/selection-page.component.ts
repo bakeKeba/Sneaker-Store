@@ -32,17 +32,18 @@ export class SelectionPageComponent implements OnInit {
             this.productService.getProductById(Number(shoeId)).subscribe((product) => {
                 this.shoe = product;
                 this.selectedImage = this.shoe.images[0];
-                console.log(this.shoe.images);
             });
         } else {
             console.log('Product ID is missing');
         }
     }
 
-    addToCart(productId: number) {
+    addToCart() {
         if (!this.selectedSize) return;
 
-        this.cartService.addToCart(productId).subscribe({
+        const shoeWithSize = { ...this.shoe, size: this.selectedSize };
+
+        this.cartService.addToCart(shoeWithSize).subscribe({
             next: () => {
                 this.router.navigate(['/']);
             },

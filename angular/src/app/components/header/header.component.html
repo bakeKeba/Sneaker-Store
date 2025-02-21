@@ -18,10 +18,20 @@
                 <span class="selection-main-text"><span (click)="goBack()" class="back-text">Back</span> Home \ Men \
                     Sneakers</span>
             </ng-container>
+            <ng-container *ngIf="page == 'cart'">
+                <i class="material-icons arrow-icon" (click)="goBack()">arrow_back</i>
+                <span class="selection-main-text cart-text">My cart</span>
+            </ng-container>
             <div class="cart-container">
-                <i class="material-icons cart-icon" [ngClass]="{ 'cart-fill': cart.length }">shopping_cart</i>
-                <span *ngIf="cart.length && cart.length < 10" class="cart-count">{{ cart.length }}</span>
-                <span *ngIf="cart.length && cart.length > 10" class="cart-count">10+</span>
+                <ng-container *ngIf="page != 'cart'">
+                    <i class="material-icons cart-icon" [ngClass]="{ 'cart-fill': cart.length }"
+                        (click)="goToCart()">shopping_cart</i>
+                    <span *ngIf="cart.length && cart.length < 10" class="cart-count">{{ cart.length }}</span>
+                    <span *ngIf="cart.length && cart.length > 10" class="cart-count">10+</span>
+                </ng-container>
+                <ng-container *ngIf="page == 'cart'">
+                    <span class="selection-main-text cart-text">{{totalPrice}} €</span>
+                </ng-container>
             </div>
         </div>
         <hr>
