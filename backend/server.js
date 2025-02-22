@@ -37,13 +37,39 @@ app.get("/api/cart", (req, res) => {
 
 // Add item to cart
 app.post("/api/cart", (req, res) => {
-  const shoe = req.body.shoe;
-  if (shoe) {
-    cart.push(shoe);
-    fs.writeFileSync(path.join(__dirname, "data", "cart.json"), JSON.stringify(cart, null, 2));
-    res.status(201).json(cart);
+  const newShoe = req.body.shoe;
+
+  if (!newShoe) {
+    return res.status(400).json({ message: "Invalid product data" });
+  }
+
+  const cartPath = path.join(__dirname, "data", "cart.json");
+  let cart = [];
+
+  try {
+    const cartData = fs.readFileSync(cartPath, "utf8");
+    cart = JSON.parse(cartData);
+  } catch (error) {
+    console.error("Error reading cart file:", error);
+  }
+
+  const existingItemIndex = cart.findIndex(
+    (item) =>
+      item.id === newShoe.id && item.size === newShoe.size
+  );
+
+  if (existingItemIndex !== -1) {
+    cart[existingItemIndex].amount += 1;
   } else {
-    res.status(404).json({ message: "Product not found" });
+    cart.push(newShoe);
+  }
+
+  try {
+    fs.writeFileSync(cartPath, JSON.stringify(cart, null, 2));
+    res.status(201).json(cart);
+  } catch (error) {
+    console.error("Error writing cart file:", error);
+    res.status(500).json({ message: "Failed to update cart" });
   }
 });
 

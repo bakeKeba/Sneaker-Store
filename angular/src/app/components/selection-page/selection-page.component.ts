@@ -41,7 +41,7 @@ export class SelectionPageComponent implements OnInit {
     addToCart() {
         if (!this.selectedSize) return;
 
-        const shoeWithSize = { ...this.shoe, size: this.selectedSize };
+        const shoeWithSize = { ...this.shoe, size: this.selectedSize, amount: this.selectedSize };
 
         this.cartService.addToCart(shoeWithSize).subscribe({
             next: () => {

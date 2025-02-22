@@ -12,6 +12,8 @@ import { CartService } from '../../services/cart.service';
 })
 export class CartPageComponent implements OnInit {
     cart: any[] = [];
+    subtotal: number = 0;
+    shippingCost: number = 5; // Example static shipping cost
     totalPrice: number = 0;
 
     constructor(private cartService: CartService) { }
@@ -20,14 +22,38 @@ export class CartPageComponent implements OnInit {
         this.getCartItems();
     }
 
-    getCartItems(): void {
+    getCartItems() {
         this.cartService.getCartItems().subscribe(items => {
             this.cart = items;
-            this.calculateTotalPrice();
+            this.calculateTotal();
         });
     }
 
-    calculateTotalPrice(): void {
-        this.totalPrice = this.cart.reduce((sum, item) => sum + (item.sale ? item.salePrice : item.price), 0);
+    calculateTotal() {
+        this.subtotal = this.cart.reduce((sum, item) => sum + (item.sale ? item.salePrice : item.price) * item.amount, 0);
+        this.totalPrice = this.subtotal + this.shippingCost;
+    }
+
+    updateQuantity(item: any, event: any) {
+        const newQuantity = parseInt(event.target.value, 10);
+        const index = this.cart.findIndex(cartItem => cartItem.id === item.id && cartItem.size === item.size);
+        if (index !== -1) {
+            this.cart[index].amount = newQuantity;
+            this.calculateTotal();
+        }
+    }
+
+    removeItem(item: any) {
+        this.cart = this.cart.filter(cartItem => !(cartItem.id === item.id && cartItem.size === item.size));
+        this.calculateTotal();
+    }
+
+    clearCart() {
+        this.cart = [];
+        this.calculateTotal();
+    }
+
+    continueShopping() {
+        window.history.back();
     }
 }
