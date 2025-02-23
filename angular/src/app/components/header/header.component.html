@@ -24,13 +24,16 @@
             </ng-container>
             <div class="cart-container">
                 <ng-container *ngIf="page != 'cart'">
-                    <i class="material-icons cart-icon" [ngClass]="{ 'cart-fill': cart.length }"
-                        (click)="goToCart()">shopping_cart</i>
+                    <i class="material-icons cart-icon"
+                        [ngClass]="{ 'cart-fill': cart.length > 0, 'disabled': cart.length === 0 }"
+                        (click)="cart.length > 0 ? goToCart() : null" [attr.disabled]="cart.length === 0 ? true : null">
+                        shopping_cart
+                    </i>
                     <span *ngIf="cart.length && cart.length < 10" class="cart-count">{{ cart.length }}</span>
                     <span *ngIf="cart.length && cart.length > 10" class="cart-count">10+</span>
                 </ng-container>
                 <ng-container *ngIf="page == 'cart'">
-                    <span class="selection-main-text cart-text">{{totalPrice}} €</span>
+                    <span class="selection-main-text cart-text">€ {{totalPrice}}</span>
                 </ng-container>
             </div>
         </div>

@@ -104,6 +104,13 @@
     position: relative;
 }
 
+
+.disabled {
+    color: grey;
+    opacity: 0.5;
+    pointer-events: none;
+}
+
 .cart-fill {
     margin-top: 5px;
 }

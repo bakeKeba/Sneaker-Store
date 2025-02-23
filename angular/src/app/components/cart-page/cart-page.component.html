@@ -1,55 +1,55 @@
+<head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
 <div class="cart-container">
     <app-header [page]="'cart'" [totalPrice]="totalPrice"></app-header>
 
     <div class="cart-main">
-        <!-- Left section (Shoes list) -->
         <div class="shoe-list">
             <div *ngFor="let item of cart" class="shoe">
-                <!-- Remove button (Material Icon) -->
-                <i class="material-icons remove-icon" (click)="removeItem(item)">back</i>
-
                 <img [src]="item.images[0]" [alt]="item.name" class="shoe-image">
                 <div class="shoe-info">
-                    <div class="shoe-name">{{ item.name }}</div>
-                    <div class="shoe-size">Size: {{ item.size }}</div>
+                    <div class="shoe-header">
+                        <div class="shoe-name">{{ item.name }}</div>
+                        <i class="material-icons remove-icon" (click)="removeItem(item)">close</i>
+                    </div>
+                    <div class="shoe-type-size">Men's {{ item.type }} Shoes</div>
+                    <div class="shoe-type-size">Size: {{ item.size }}</div>
                     <div class="shoe-price">
-                        <span *ngIf="item.sale" class="shoe-sale-price">€{{ item.salePrice }}</span>
-                        <span [class.strikethrough]="item.sale">€{{ item.price }}</span>
+                        <span *ngIf="item.sale" class="shoe-sale-price">€ {{ item.salePrice }}</span>
+                        <span [class.strikethrough]="item.sale">€ {{ item.price }}</span>
                     </div>
-                    <!-- Quantity Dropdown -->
-                    <div class="shoe-quantity">
-                        <label for="quantity-{{item.id}}">Quantity:</label>
-                        <select [id]="'quantity-' + item.id" (change)="updateQuantity(item, $event)">
-                            <option *ngFor="let qty of [1,2,3,4,5,6,7,8,9,10]" [value]="qty"
-                                [selected]="qty === item.amount">
-                                {{ qty }}
-                            </option>
-                        </select>
-                    </div>
+                    <select class="shoe-quantity-dropdown" [id]="'quantity-' + item.id"
+                        (change)="updateQuantity(item, $event)">
+                        <option *ngFor="let qty of [1,2,3,4,5,6,7,8,9,10]" [value]="qty"
+                            [selected]="qty === item.amount">
+                            {{ qty }}
+                        </option>
+                    </select>
                 </div>
             </div>
         </div>
 
-        <!-- Right section (Order Summary & Checkout) -->
         <div class="secondary-container">
             <div class="overview">
-                <h3>Order Overview</h3>
+                <div class="overview-header">Order Overview</div>
                 <div class="summary-row">
                     <span>Subtotal:</span>
-                    <span>€{{ subtotal }}</span>
+                    <span>€ {{ subtotal }}</span>
                 </div>
                 <div class="summary-row">
                     <span>Shipping:</span>
-                    <span>€{{ shippingCost }}</span>
+                    <span>€ {{ shippingCost }}</span>
                 </div>
                 <div class="summary-row total">
                     <span>Estimated Total:</span>
-                    <span>€{{ totalPrice }}</span>
+                    <span>€ {{ totalPrice }}</span>
                 </div>
             </div>
 
             <div class="checkout">
-                <button class="checkout-btn">Proceed to Checkout</button>
+                <button class="checkout-btn" (click)="checkout()">Go to Checkout</button>
                 <button class="continue-btn" (click)="continueShopping()">Continue Shopping</button>
                 <button class="clear-cart-btn" (click)="clearCart()">Clear Cart</button>
             </div>

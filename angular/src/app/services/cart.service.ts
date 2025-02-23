@@ -15,11 +15,15 @@ export class CartService {
     }
 
     addToCart(shoe: any): Observable<any> {
-        return this.http.post<any>(this.apiUrl, { shoe });
+        return this.http.post<any>(this.apiUrl, shoe);
     }
 
-    removeFromCart(productId: number): Observable<any> {
-        return this.http.delete<any>(`${this.apiUrl}/${productId}`);
+    removeFromCart(shoeId: number): Observable<any> {
+        return this.http.delete<any>(`${this.apiUrl}/${shoeId}`);
+    }
+
+    updateCartItem(cartId: number, amount: number): Observable<any> {
+        return this.http.put<any>(`${this.apiUrl}/${cartId}`, { amount });
     }
 
     clearCart(): Observable<any> {
