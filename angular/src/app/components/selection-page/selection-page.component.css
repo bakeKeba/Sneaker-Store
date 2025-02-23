@@ -110,6 +110,7 @@ hr.active {
 .shoe-type {
     font-size: 24px;
     margin: 5px 0;
+    font-weight: lighter;
 }
 
 .price-container {
