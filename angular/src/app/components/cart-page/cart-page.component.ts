@@ -62,6 +62,7 @@ export class CartPageComponent implements OnInit {
         this.cartService.removeFromCart(shoe.cartId).subscribe({
             next: (updatedCart) => {
                 this.cart = updatedCart;
+                this.calculateTotal();
             },
             error: (err) => {
                 console.error("Error removing item from cart:", err);
