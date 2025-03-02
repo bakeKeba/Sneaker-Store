@@ -51,6 +51,7 @@ Users can browse sneakers, add items to the cart, and proceed to checkout. The f
 
 ### 1️⃣ Clone the Repository  
 git clone https://github.com/bakeKeba/Sneaker-Store.git
+
 cd Sneaker-Store
 
 ### 2️⃣ Install Dependencies
@@ -58,8 +59,10 @@ npm install
 
 ### 3️⃣ Run the Backend
 cd backend
+
 node server.js
 
 ### 4️⃣ Run the Frontend
 cd angular
+
 ng serve
