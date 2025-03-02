@@ -27,13 +27,13 @@ Users can browse sneakers, add items to the cart, and proceed to checkout. The f
 ## 📸 Original Figma Designs
 
 ### 🏠 Landing Page  
-![Landing Page](https://via.placeholder.com/800x400.png?text=Home+Page+Screenshot)  
+![Landing Page](https://raw.githubusercontent.com/bakeKeba/Sneaker-Store/main/screenshots/figma_landing_page.png)  
 
 ### 🎯 Selection Page  
-![Selection Page](https://via.placeholder.com/800x400.png?text=Home+Page+Screenshot) 
+![Selection Page](https://raw.githubusercontent.com/bakeKeba/Sneaker-Store/main/screenshots/figma_selection_page.png) 
 
 ### 🛒 Cart Page  
-![Cart Page](https://via.placeholder.com/800x400.png?text=Cart+Page+Screenshot)  
+![Cart Page](https://raw.githubusercontent.com/bakeKeba/Sneaker-Store/main/screenshots/figma_cart_page.png)  
 
 
 ## 📸 Screenshots  
@@ -42,7 +42,6 @@ Users can browse sneakers, add items to the cart, and proceed to checkout. The f
 ![Landing Page](https://raw.githubusercontent.com/bakeKeba/Sneaker-Store/main/screenshots/sneaker_store_1.png)  
 
 ### 🎯 Selection Page  
-![Selection Page](https://raw.githubusercontent.com/bakeKeba/Sneaker-Store/main/screenshots/sneaker_store_2.png) 
 
 ### 🛒 Cart Page  
 ![Cart Page](https://raw.githubusercontent.com/bakeKeba/Sneaker-Store/main/screenshots/sneaker_store_3.png)  
