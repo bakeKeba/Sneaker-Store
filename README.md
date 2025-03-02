@@ -42,6 +42,7 @@ Users can browse sneakers, add items to the cart, and proceed to checkout. The f
 ![Landing Page](https://raw.githubusercontent.com/bakeKeba/Sneaker-Store/main/screenshots/sneaker_store_1.png)  
 
 ### 🎯 Selection Page  
+![Selection Page](https://raw.githubusercontent.com/bakeKeba/Sneaker-Store/main/screenshots/sneaker_store_2.png) 
 
 ### 🛒 Cart Page  
 ![Cart Page](https://raw.githubusercontent.com/bakeKeba/Sneaker-Store/main/screenshots/sneaker_store_3.png)  
