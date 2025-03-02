@@ -1,21 +1,22 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+
+import { API_URL } from '../app.config';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
-  private apiUrl = 'http://localhost:3000/api/products';
+  private apiUrl = `${API_URL}/products`; // Uses dynamic API URL
 
-  constructor(private http: HttpClient) { }
+  private http = inject(HttpClient); // Uses Angular's `inject` for better DI
 
   getProducts(): Observable<any[]> {
     return this.http.get<any[]>(this.apiUrl);
   }
 
   getProductById(id: number): Observable<any> {
-    const url = `${this.apiUrl}/${id}`;  // API endpoint for a specific product
-    return this.http.get<any>(url);
+    return this.http.get<any>(`${this.apiUrl}/${id}`);
   }
 }
