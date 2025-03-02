@@ -1,37 +1,51 @@
 # 🛍️ Sneaker E-Commerce Website  
 
-![GitHub Repo stars](https://img.shields.io/github/stars/yourusername/sneaker-ecommerce?style=social) 
-![GitHub forks](https://img.shields.io/github/forks/yourusername/sneaker-ecommerce?style=social)  
-![GitHub last commit](https://img.shields.io/github/last-commit/yourusername/sneaker-ecommerce)  
-![GitHub license](https://img.shields.io/github/license/yourusername/sneaker-ecommerce)  
 ![Made with Angular](https://img.shields.io/badge/Made%20with-Angular-red?logo=angular)  
 ![Made with Node.js](https://img.shields.io/badge/Backend-Node.js-green?logo=node.js)  
-![Deployment](https://img.shields.io/badge/Deployed%20on-Vercel-blue?logo=vercel)  
 
 ## 🚀 Overview  
 This is a fully functional **Sneaker E-Commerce Website** built with **Angular** and **Node.js**.  
-Users can browse sneakers, add items to the cart, and proceed to checkout.
+Users can browse sneakers, add items to the cart, and proceed to checkout. The focus of this project is displaying the design as well as the frontend and backend.
 
 ## ✨ Features  
-- 🛒 Add, update, and remove items from the cart  
-- 📦 Dynamic price calculation  
+- 🛒 Add, update, and remove items from the cart
+- 🏷️ Filter shoes based on the type
+- 🔽 Sort shoes based on certain criteria
+- 📦 Dynamic price calculation
+- 🎯 Selection of sneaker size and amount
+- 💾 Dynamic database handling and updating
 - 🌍 Responsive design for all screen sizes  
 - ⚡️ Fast and lightweight front-end with **Angular**  
 - 🔥 Secure **Node.js** back-end  
 
 ## 🖥️ Technologies Used  
-- **Frontend:** Angular, TypeScript, Bootstrap  
+- **Frontend:** Angular, TypeScript  
 - **Backend:** Node.js, Express  
-- **Database:** JSON (for now, can be upgraded to MongoDB or PostgreSQL)  
-- **Styling:** CSS, Flexbox  
-- **Deployment:** Vercel  
+- **Database:** JSON
+- **Styling:** CSS, Flexbox
 
-## 📸 Screenshots  
-### 🏠 Home Page  
-![Home Page](https://via.placeholder.com/800x400.png?text=Home+Page+Screenshot)  
+## 📸 Original Figma Designs
+
+### 🏠 Landing Page  
+![Landing Page](https://via.placeholder.com/800x400.png?text=Home+Page+Screenshot)  
+
+### 🎯 Selection Page  
+![Selection Page](https://via.placeholder.com/800x400.png?text=Home+Page+Screenshot) 
 
 ### 🛒 Cart Page  
 ![Cart Page](https://via.placeholder.com/800x400.png?text=Cart+Page+Screenshot)  
+
+
+## 📸 Screenshots  
+
+### 🏠 Landing Page  
+![Landing Page](https://raw.githubusercontent.com/bakeKeba/Sneaker-Store/main/screenshots/sneaker_store_1.png)  
+
+### 🎯 Selection Page  
+![Selection Page](https://raw.githubusercontent.com/bakeKeba/Sneaker-Store/main/screenshots/sneaker_store_2.png) 
+
+### 🛒 Cart Page  
+![Cart Page](https://raw.githubusercontent.com/bakeKeba/Sneaker-Store/main/screenshots/sneaker_store_3.png)  
 
 ## 🚀 Getting Started  
 
